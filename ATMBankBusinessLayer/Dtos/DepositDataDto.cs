@@ -9,7 +9,7 @@ namespace ATMBankBusinessLayer.Dtos
     public class DepositDataDto
     {
         public decimal AmountToBeDeposit { get; set; }
-        public string CurrencyName { get; set; }
+        public int AccountType { get; set; }
         public Guid CustomersId { get; set; }
     }
 }

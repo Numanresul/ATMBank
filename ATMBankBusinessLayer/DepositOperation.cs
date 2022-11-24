@@ -29,7 +29,7 @@ namespace ATMBankBusinessLayer
             Customers? CurrentCustomer = _customerOperations.GetById(depositDataDto.CustomersId);
             if (CurrentCustomer != null)
             {
-                Currencies? CurrentCurrency = _currencyOperations.GetByName(depositDataDto.CurrencyName);
+                Currencies? CurrentCurrency = _currencyOperations.GetByType(depositDataDto.AccountType);
                 if (CurrentCurrency != null)
                 {
                     BalanceAccounts? CurrentBalanceAccount = _balanceAccountOperations.GetAll()
@@ -55,7 +55,7 @@ namespace ATMBankBusinessLayer
                     else
                     {
 
-                        Currencies? currency = _currencyOperations.GetByName(depositDataDto.CurrencyName);
+                        Currencies? currency = _currencyOperations.GetByType(depositDataDto.AccountType);
 
                         BalanceAccounts newBalanceAccounts = new BalanceAccounts();
                         newBalanceAccounts.CurrenciesId = currency.Id;

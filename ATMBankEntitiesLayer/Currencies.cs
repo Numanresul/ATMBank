@@ -6,7 +6,7 @@ namespace ATMBankEntitiesLayer
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string CurrencyName { get; set; }
-
+        public int AccountType { get; set; }
         public ICollection<BalanceAccounts> BalanceAccounts { get; set; } 
         public bool Deleted { get; set; }
         public string CreatedBy { get; set; } = "Default";

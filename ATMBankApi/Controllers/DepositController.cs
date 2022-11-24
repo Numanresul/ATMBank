@@ -1,5 +1,6 @@
 ﻿using ATMBankBusinessLayer;
 using ATMBankBusinessLayer.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -7,6 +8,7 @@ namespace ATMBankApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class DepositController : Controller
     {
         private DepositOperation _depositOperation;

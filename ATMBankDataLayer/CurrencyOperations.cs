@@ -23,6 +23,10 @@ namespace ATMBankDataLayer
         {
             return _db.Currencies.Where(x => x.Deleted == false && x.CurrencyName == currencyName).SingleOrDefault();
         }
+        public Currencies? GetByType(int accountTyppe)
+        {
+            return _db.Currencies.Where(x => x.Deleted == false && x.AccountType == accountTyppe).SingleOrDefault();
+        }
         public List<Currencies> GetAll()
         {
             return _db.Currencies.Where(x => x.Deleted == false).ToList();

@@ -10,7 +10,7 @@ namespace ATMBankBusinessLayer.Dtos
     public class WithdrawDataDto
     {
         public decimal AmountToBeWithdrawn { get; set; }
-        public string CurrencyName { get; set; }
+        public int AccountType { get; set; }
         public Guid CustomersId { get; set; }
     }
 }

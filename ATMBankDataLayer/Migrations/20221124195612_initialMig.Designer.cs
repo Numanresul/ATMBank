@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ATMBankDataLayer.Migrations
 {
     [DbContext(typeof(ATMBankDBContext))]
-    [Migration("20221123200440_addDefaultCurrencSeedData")]
-    partial class addDefaultCurrencSeedData
+    [Migration("20221124195612_initialMig")]
+    partial class initialMig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -100,6 +100,32 @@ namespace ATMBankDataLayer.Migrations
                     b.HasIndex("CustomersId");
 
                     b.ToTable("BalanceAccounts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("6f53285b-002f-4411-ad9c-b26d0a6b0ca5"),
+                            CreatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7679),
+                            CreatedBy = "Default",
+                            CurrenciesId = new Guid("2627f7e3-b14c-4fa2-a342-2dc4b765f32f"),
+                            CurrentBalance = 1500m,
+                            CustomersId = new Guid("120276a7-bcb7-4f5d-965a-88df78d06d3b"),
+                            Deleted = false,
+                            UpdatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7680),
+                            UpdatedBy = "Default"
+                        },
+                        new
+                        {
+                            Id = new Guid("7b6e9787-7218-4c41-8e46-468f316db478"),
+                            CreatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7695),
+                            CreatedBy = "Default",
+                            CurrenciesId = new Guid("d65f4d92-a79b-4a52-a05a-a4b96f72e7e1"),
+                            CurrentBalance = 100m,
+                            CustomersId = new Guid("120276a7-bcb7-4f5d-965a-88df78d06d3b"),
+                            Deleted = false,
+                            UpdatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7695),
+                            UpdatedBy = "Default"
+                        });
                 });
 
             modelBuilder.Entity("ATMBankEntitiesLayer.Currencies", b =>
@@ -107,6 +133,9 @@ namespace ATMBankDataLayer.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<int>("AccountType")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -137,28 +166,34 @@ namespace ATMBankDataLayer.Migrations
                         new
                         {
                             Id = new Guid("d65f4d92-a79b-4a52-a05a-a4b96f72e7e1"),
-                            CreatedAt = new DateTime(2022, 11, 23, 23, 4, 40, 590, DateTimeKind.Local).AddTicks(5727),
+                            AccountType = 3,
+                            CreatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7646),
                             CreatedBy = "Default",
                             CurrencyName = "USD",
                             Deleted = false,
+                            UpdatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7646),
                             UpdatedBy = "Default"
                         },
                         new
                         {
                             Id = new Guid("71196b7a-a648-4e9f-bc51-c4235fb44696"),
-                            CreatedAt = new DateTime(2022, 11, 23, 23, 4, 40, 590, DateTimeKind.Local).AddTicks(5740),
+                            AccountType = 2,
+                            CreatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7658),
                             CreatedBy = "Default",
                             CurrencyName = "EUR",
                             Deleted = false,
+                            UpdatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7659),
                             UpdatedBy = "Default"
                         },
                         new
                         {
                             Id = new Guid("2627f7e3-b14c-4fa2-a342-2dc4b765f32f"),
-                            CreatedAt = new DateTime(2022, 11, 23, 23, 4, 40, 590, DateTimeKind.Local).AddTicks(5748),
+                            AccountType = 1,
+                            CreatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7667),
                             CreatedBy = "Default",
                             CurrencyName = "TRY",
                             Deleted = false,
+                            UpdatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7668),
                             UpdatedBy = "Default"
                         });
                 });
@@ -208,13 +243,14 @@ namespace ATMBankDataLayer.Migrations
                         new
                         {
                             Id = new Guid("120276a7-bcb7-4f5d-965a-88df78d06d3b"),
-                            CreatedAt = new DateTime(2022, 11, 23, 23, 4, 40, 590, DateTimeKind.Local).AddTicks(5605),
+                            CreatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7531),
                             CreatedBy = "Default",
                             Deleted = false,
                             IdentityNumber = 111222333444L,
                             Name = "Numan",
                             Pin = 1234L,
                             Surname = "Kul",
+                            UpdatedAt = new DateTime(2022, 11, 24, 22, 56, 12, 706, DateTimeKind.Local).AddTicks(7542),
                             UpdatedBy = "Default"
                         });
                 });

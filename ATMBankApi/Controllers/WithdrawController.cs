@@ -2,14 +2,17 @@
 using ATMBankBusinessLayer;
 using ATMBankBusinessLayer.Dtos;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ATMBankApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class WithdrawController : Controller
     {
         private WithdrawOperation _witdrawOperation;
+
         public WithdrawController() 
         {
             _witdrawOperation = new WithdrawOperation();
