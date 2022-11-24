@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "8e12c608-3e19-4fd7-99bf-b638c57f37b9",
+		"name": "ATMBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6347460"
+	},
+	"item": [
+		{
+			"name": "https://localhost:7271/Withdraw/withdraw",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImRjNDhjOGMyLTA0YzEtNGI1ZC04MzI4LWQwMzVhMzdiY2YzMyIsInN1YiI6IjEyMDI3NmE3LWJjYjctNGY1ZC05NjVhLTg4ZGY3OGQwNmQzYiIsImVtYWlsIjoiTnVtYW4iLCJqdGkiOiI0MWFjMjE0MS03OTY2LTQ2OWYtYjZhYy00ZTc2NGE4MjcwOWIiLCJuYmYiOjE2NjkzMTUwNDUsImV4cCI6MTY2OTMxNTM0NSwiaWF0IjoxNjY5MzE1MDQ1LCJpc3MiOiJhdG1CYW5rSXNzdWVyIiwiYXVkIjoiYXRtQmFua0F1ZGllbmNlIn0.fugOOjdED9MXOXu6TG8ZvARIyC6gm8uBtl1_Xl2q44OPQXGN8pu0jYg0vRJ2cqsmjGmpBewjIgt-LRgijFq7eA"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amountToBeWithdrawn\": 10,\r\n  \"currencyName\": \"USD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:7271/Withdraw/withdraw"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7271/Withdraw/withdraw",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImRjNDhjOGMyLTA0YzEtNGI1ZC04MzI4LWQwMzVhMzdiY2YzMyIsInN1YiI6IjEyMDI3NmE3LWJjYjctNGY1ZC05NjVhLTg4ZGY3OGQwNmQzYiIsImVtYWlsIjoiTnVtYW4iLCJqdGkiOiI0MWFjMjE0MS03OTY2LTQ2OWYtYjZhYy00ZTc2NGE4MjcwOWIiLCJuYmYiOjE2NjkzMTUwNDUsImV4cCI6MTY2OTMxNTM0NSwiaWF0IjoxNjY5MzE1MDQ1LCJpc3MiOiJhdG1CYW5rSXNzdWVyIiwiYXVkIjoiYXRtQmFua0F1ZGllbmNlIn0.fugOOjdED9MXOXu6TG8ZvARIyC6gm8uBtl1_Xl2q44OPQXGN8pu0jYg0vRJ2cqsmjGmpBewjIgt-LRgijFq7eA"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"AmountToBeDeposit\": 10,\r\n  \"currencyName\": \"USD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:7271/Deposit/deposit"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7271/Account/signIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pin\": 1234,\r\n  \"identityNumber\": 111222333444\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:7271/Account/signIn"
+			},
+			"response": []
+		}
+	]
+}
